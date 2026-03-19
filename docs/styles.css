@@ -1,0 +1,197 @@
+/* variables globales para reutilizar*/
+:root{
+  --bg: #f7f9ff;
+  --surface: #ffffff;
+  --card: #f1f5ff;
+  --muted: #7f8aa8;
+  --accent: #8fa4ff;
+  --border: rgba(0, 0, 0, 0.08);
+  --text: #1b2a4a;
+}
+
+@media (prefers-color-scheme: dark){
+    :root{
+        --bg: #f7f9ff;
+        --surface: #ffffff;
+        --card: #f1f5ff;
+        --muted: #7f8aa8;
+        --accent: #8fa4ff;
+        --border: rgba(0, 0, 0, 0.08);
+        --text: #1b2a4a;
+    }
+}
+/*si cambiamos el tema, queremos qeu se cambien las variabels, en el script pondremos la variable de data-theme y dependiendo del valor que tenga usaremos uno u otro*/
+
+html[data-theme="light"] {
+  --bg: #f7f9ff;
+  --surface: #ffffff;
+  --card: #f1f5ff;
+  --muted: #7f8aa8;
+  --accent: #8fa4ff;
+  --border: rgba(0, 0, 0, 0.08);
+  --text: #1b2a4a;
+}
+
+html[data-theme="dark"] {
+  --bg: #0f172a;
+  --surface: #1b273d;
+  --card: #1a2336;
+  --muted: #9aa8c7;
+  --accent: #9fb4ff;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #e6f0ff;
+}
+
+/*Aplicamos a todos los elementos el box_sizing de border box para que a la hora de que se calcule el max width por ejemplo, se ajuste con los bordes, margin... y se mantenga el max widht por mucho que aumentemso el padding o coasa así*/
+*{
+    box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 32px;
+}
+.site-header{
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.site-title{
+  font-size: 2rem;
+  margin: 0;
+  font-weight: 600;
+}
+.site-sub{
+  color: var(--muted);
+  margin-top: 6px;
+  font-size: 0.95rem;
+}
+.main-nav{
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--accent);
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.main-nav a:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.about-me{
+    margin-top: 36px;
+}
+
+.description{
+    line-height: 1.65;
+    color: var(--muted);
+}
+
+.cards {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 22px;
+  border-radius: 12px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.btn{
+  display: inline-block;
+  margin-top: 14px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #0b1020;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: opacity 0.2s ease;
+  border: var(--border);
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.blog{
+  margin-top: 50px;
+ 
+}
+
+.blog h2{
+  color: var(--text);
+}
+
+.blog p{
+  color: var(--muted);
+}
+
+
+.blog-a{
+  color: var(--accent);
+  font-weight: 900;
+  text-decoration: none;
+}
+.blog-a:hover{
+  color: var(--text);
+  text-decoration: underline;
+}
+.site-footer {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--muted);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 20px;
+    margin: 20px auto;
+  }
+}
+
+#themeToggle{
+  margin-left: 5px;
+}
