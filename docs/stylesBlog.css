@@ -1,0 +1,69 @@
+:root{
+  --bg: #f7f9ff;
+  --surface: #ffffff;
+  --card: #f1f5ff;
+  --muted: #7f8aa8;
+  --accent: #8fa4ff;
+  --border: rgba(0, 0, 0, 0.08);
+  --text: #1b2a4a;
+}
+
+@media (prefers-color-scheme: dark){
+    :root{
+        --bg: #f7f9ff;
+        --surface: #ffffff;
+        --card: #f1f5ff;
+        --muted: #7f8aa8;
+        --accent: #8fa4ff;
+        --border: rgba(0, 0, 0, 0.08);
+        --text: #1b2a4a;
+    }
+}
+/*si cambiamos el tema, queremos qeu se cambien las variabels, en el script pondremos la variable de data-theme y dependiendo del valor que tenga usaremos uno u otro*/
+
+html[data-theme="light"] {
+  --bg: #f7f9ff;
+  --surface: #ffffff;
+  --card: #f1f5ff;
+  --muted: #7f8aa8;
+  --accent: #8fa4ff;
+  --border: rgba(0, 0, 0, 0.08);
+  --text: #1b2a4a;
+}
+
+html[data-theme="dark"] {
+  --bg: #0f172a;
+  --surface: #1b273d;
+  --card: #1a2336;
+  --muted: #9aa8c7;
+  --accent: #9fb4ff;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #e6f0ff;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+
+
+.main-nav{
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--accent);
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.main-nav a:hover {
+  background: rgba(0, 0, 0, 0.06);
+}

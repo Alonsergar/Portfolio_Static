@@ -7,6 +7,8 @@
   --accent: #8fa4ff;
   --border: rgba(0, 0, 0, 0.08);
   --text: #1b2a4a;
+  --code: #4d4566;
+  --clippboard:#f7f9ff;
 }
 
 @media (prefers-color-scheme: dark){
@@ -18,6 +20,8 @@
         --accent: #8fa4ff;
         --border: rgba(0, 0, 0, 0.08);
         --text: #1b2a4a;
+        --code: #665b86;
+        --clippboard:#1b2a4a;
     }
 }
 /*si cambiamos el tema, queremos qeu se cambien las variabels, en el script pondremos la variable de data-theme y dependiendo del valor que tenga usaremos uno u otro*/
@@ -30,6 +34,8 @@ html[data-theme="light"] {
   --accent: #8fa4ff;
   --border: rgba(0, 0, 0, 0.08);
   --text: #1b2a4a;
+  --code: #4d4566;
+  --clippboard:#f7f9ff;
 }
 
 html[data-theme="dark"] {
@@ -40,6 +46,8 @@ html[data-theme="dark"] {
   --accent: #9fb4ff;
   --border: rgba(255, 255, 255, 0.08);
   --text: #e6f0ff;
+  --code: #665b86;
+  --clippboard:#1b2a4a;
 }
 
 /*Aplicamos a todos los elementos el box_sizing de border box para que a la hora de que se calcule el max width por ejemplo, se ajuste con los bordes, margin... y se mantenga el max widht por mucho que aumentemso el padding o coasa así*/
@@ -194,4 +202,61 @@ html, body {
 
 #themeToggle{
   margin-left: 5px;
+}
+
+code{
+  padding: 5px;
+  border-radius: 3px;
+  color: var(--card);
+  background-color: var(--code);
+  margin: 5px 5px 5px 0px;
+  align-items: center;
+  
+}
+
+.copy-clipboard img{
+  max-width: 20px;
+  max-height: 20px;
+ 
+  
+}
+.copy-clipboard {
+  background-color: var(--surface);
+  border: none;
+}
+.copy-clipboard :hover{
+  background-color: rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+}
+.copy-clipboard  :active{
+background-color: rgba(0, 0, 0, 0.24);
+}
+
+[data-theme="dark"] .copy-clipboard:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .copy-clipboard:active {
+  background-color: rgba(255, 255, 255, 0.24);
+}
+
+
+
+.code-blocks{
+  display: flex;
+}
+
+.project{
+background-color: var(--surface);
+padding: 10px 10px 20px;
+border-radius: 10px;
+margin-bottom: 30px;
+color: var(--accent);
+}
+.project p{
+  color: var(--muted);
+}
+
+.copytext{
+  font-size: 11px;
 }

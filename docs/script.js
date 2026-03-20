@@ -41,3 +41,34 @@ document.getElementById('year').textContent =new Date().getFullYear();
     });
   }
 })();
+
+function click1(){
+const texto = document.getElementById("code1").innerText;
+navigator.clipboard.writeText(texto)
+const copyEl = document.getElementById("copy1");
+copyEl.innerText = "¡Copiado!";
+ setTimeout(() => {
+    copyEl.innerText = "";
+  }, 1000);
+
+}
+function click2(){
+const texto = document.getElementById("code2").innerText;
+navigator.clipboard.writeText(texto)
+const copyEl = document.getElementById("copy2");
+copyEl.innerText = "¡Copiado!";
+ setTimeout(() => {
+    copyEl.innerText = "";
+  }, 1000);
+
+}
+function click3(){
+const texto = document.getElementById("code3").innerText;
+navigator.clipboard.writeText(texto)
+const copyEl = document.getElementById("copy3");
+copyEl.innerText = "¡Copiado!";
+ setTimeout(() => {
+    copyEl.innerText = "";
+  }, 1000);
+
+}
